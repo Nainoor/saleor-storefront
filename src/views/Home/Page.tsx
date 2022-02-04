@@ -7,7 +7,7 @@ import { generatePath } from "react-router";
 import { paths } from "@paths";
 import { FeaturedProducts } from "@utils/ssr";
 
-import { Button, ProductsFeatured } from "../../components";
+import { ProductsFeatured } from "../../components";
 import { structuredData } from "../../core/SEO/Homepage/structuredData";
 import noPhotoImg from "../../images/no-photo.svg";
 import {
