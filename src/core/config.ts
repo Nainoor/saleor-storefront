@@ -5,7 +5,7 @@ import { paths } from "@paths";
 import { ssrMode } from "@temp/constants";
 
 export const PRODUCTS_PER_PAGE = 6;
-export const SUPPORT_EMAIL = "support@example.com";
+export const SUPPORT_EMAIL = "support@bhuvanpatel.com";
 export const PROVIDERS = {
   BRAINTREE: {
     label: "Braintree",
@@ -43,17 +43,17 @@ export const STATIC_PAGES = [
 export const SOCIAL_MEDIA = [
   {
     ariaLabel: "facebook",
-    href: "https://www.facebook.com/mirumeelabs/",
+    href: "https://www.facebook.com/bhuvan.patel.370/",
     path: require("../images/facebook-icon.svg"),
   },
   {
     ariaLabel: "instagram",
-    href: "https://www.instagram.com/mirumeelabs/",
+    href: "https://www.instagram.com/_bhuvanpatel_/",
     path: require("../images/instagram-icon.svg"),
   },
   {
     ariaLabel: "twitter",
-    href: "https://twitter.com/getsaleor",
+    href: "https://twitter.com/bhuvanp40197003",
     path: require("../images/twitter-icon.svg"),
   },
   {
@@ -64,12 +64,11 @@ export const SOCIAL_MEDIA = [
 ];
 export const META_DEFAULTS = {
   custom: [],
-  description:
-    "Open-source PWA storefront built with Saleor's e-commerce GraphQL API. Written with React and TypeScript.",
+  description: "This is the website for buying Bhuvan Patel Originals",
   image: `${
     !ssrMode ? window.location.origin : ""
   }${require("../images/logo.svg")}`,
-  title: "Demo PWA Storefront – Saleor Commerce",
+  title: "Bhuvan Patel Originals - Shop and Portfolio",
   type: "website",
   url: !ssrMode ? window.location.origin : "",
 };

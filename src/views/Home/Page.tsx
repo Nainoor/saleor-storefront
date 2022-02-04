@@ -32,7 +32,7 @@ const Page: React.FC<{
       <script className="structured-data-list" type="application/ld+json">
         {structuredData(shop)}
       </script>
-      <div
+      {/* <div
         className="home-page__hero"
         style={
           featuredProducts.backgroundImage
@@ -73,7 +73,7 @@ const Page: React.FC<{
             </Link>
           )}
         </div>
-      </div>
+      </div> */}
       <ProductsFeatured
         products={featuredProducts.products}
         title={intl.formatMessage({ defaultMessage: "Featured" })}
