@@ -9,6 +9,7 @@ import {
   DummyPaymentGateway,
   StripePaymentGateway,
 } from "..";
+
 import * as S from "./styles";
 import { IProps } from "./types";
 

@@ -1,6 +1,6 @@
 {
-  "name": "Saleor",
-  "short_name": "Saleor",
+  "name": "Bhvuan Patel Originals",
+  "short_name": "Bhuvan Patel",
   "icons": [
     {
       "src": "/favicon-512.png",
@@ -34,7 +34,7 @@
     }
   ],
   "background_color": "#ddd",
-  "description": "Storefront for the Saleor e-commerce platform",
+  "description": "The store of artist Bhuvan Patel",
   "display": "standalone",
   "start_url": "/",
   "theme_color": "#333"
