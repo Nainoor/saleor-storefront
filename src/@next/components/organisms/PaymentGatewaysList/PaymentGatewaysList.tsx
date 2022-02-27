@@ -1,6 +1,7 @@
 import React from "react";
 
 import { ErrorMessage, Radio } from "@components/atoms";
+
 import { PROVIDERS } from "@temp/core/config";
 
 import {
@@ -11,6 +12,7 @@ import {
 } from "..";
 
 import * as S from "./styles";
+
 import { IProps } from "./types";
 
 /**
