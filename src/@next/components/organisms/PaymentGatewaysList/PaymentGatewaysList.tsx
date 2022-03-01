@@ -1,13 +1,14 @@
 import React from "react";
 
-import { ErrorMessage, Radio } from "@components/atoms";
+// import { ErrorMessage, Radio } from "@components/atoms";
+import { ErrorMessage} from "@components/atoms";
 
-import { PROVIDERS } from "@temp/core/config";
+// import { PROVIDERS } from "@temp/core/config";
 
 import {
-  AdyenPaymentGateway,
-  BraintreePaymentGateway,
-  DummyPaymentGateway,
+  // AdyenPaymentGateway,
+  // BraintreePaymentGateway,
+  // DummyPaymentGateway,
   StripePaymentGateway,
 } from "..";
 
