@@ -25,7 +25,7 @@ export interface ArticleViewProps {
 export const ArticleView: NextPage<ArticleViewProps> = ({ data }) => {
   const { pathname } = useRouter();
   const [canDisplay, headerImage] = useMemo(
-    () => [data?.article, data?.featuredProducts?.backgroundImage.url],
+    () => [data?.article, data?.featuredProducts?.backgroundImage?.url],
     [data]
   );
 
