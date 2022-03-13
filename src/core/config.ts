@@ -39,8 +39,28 @@ export const PROVIDERS = {
 };
 export const STATIC_PAGES = [
   {
-    label: "About",
+    label: "About Us",
     url: generatePath(paths.page, { slug: "about-us" }),
+  },
+  {
+    label: "Privacy Policy",
+    url: generatePath(paths.page, { slug: "privacy-policy" }),
+  },
+  {
+    label: "Contact Us",
+    url: generatePath(paths.page, { slug: "contact-us" }),
+  },
+  {
+    label: "Refund and Cancellations",
+    url: generatePath(paths.page, { slug: "refund-and-cancellations" }),
+  },
+  {
+    label: "Shipping Policy",
+    url: generatePath(paths.page, { slug: "shipping-policy" }),
+  },
+  {
+    label: "Terms and Conditions",
+    url: generatePath(paths.page, { slug: "terms-and-conditions" }),
   },
 ];
 export const SOCIAL_MEDIA = [
