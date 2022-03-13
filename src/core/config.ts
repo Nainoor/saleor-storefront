@@ -40,7 +40,7 @@ export const PROVIDERS = {
 export const STATIC_PAGES = [
   {
     label: "About",
-    url: generatePath(paths.page, { slug: "about" }),
+    url: generatePath(paths.page, { slug: "about-us" }),
   },
 ];
 export const SOCIAL_MEDIA = [
