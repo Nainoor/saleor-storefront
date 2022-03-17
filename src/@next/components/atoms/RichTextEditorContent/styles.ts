@@ -70,7 +70,7 @@ export const Content = styled.div`
       counter-increment: my-awesome-counter;
       &:before {
         content: counter(my-awesome-counter) ".";
-        color: $darkGreen;
+        color: #06847b;
         position: absolute;
         left: 0;
       }
@@ -90,7 +90,7 @@ export const Content = styled.div`
         width: 0.375rem;
         height: 0.375rem;
         border-radius: 50%;
-        background-color: $darkGreen;
+        background-color: #06847b;
       }
       &:last-child {
         margin-bottom: 0;
@@ -103,7 +103,7 @@ export const Content = styled.div`
     font-size: 1.125rem;
     font-style: italic;
     background-color: $turquoise-light;
-    border-left: 0.5rem solid $darkGreen;
+    border-left: 0.5rem solid #06847b;
     margin: 1.875rem auto;
     padding: 3.75rem 2.5rem 3rem 2.5rem;
     &:before {
