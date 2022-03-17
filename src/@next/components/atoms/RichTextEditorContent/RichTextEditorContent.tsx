@@ -9,6 +9,7 @@ export interface RichTextEditorContentProps {
 
 export const RichTextEditorContent: React.FC<RichTextEditorContentProps> = ({
   jsonData,
+  
 }) => {
   const editorHtml = useRef(EditorJSHTML());
   const data = jsonData ? JSON.parse(jsonData) : [];
