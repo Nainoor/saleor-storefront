@@ -31,7 +31,7 @@ export const Tabs = styled.div`
   flex-wrap: none;
   width: 100%;
   border-bottom: 1px solid ${props => props.theme.colors.tabsBorder};
-  margin-bottom: 70px;
+  margin-bottom: 20px;
   overflow: hidden;
 `;
 
