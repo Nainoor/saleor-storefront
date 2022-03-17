@@ -42,7 +42,7 @@ export const Content = styled.div`
     font-size: 1.4rem;
     line-height: 1.6rem;
     outline: none;
-    padding: 0.4em 0;
+    padding: 0.4em 0; 
   }
 
   b {
