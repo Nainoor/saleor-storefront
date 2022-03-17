@@ -39,7 +39,7 @@ export const Content = styled.div`
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1.6rem;
     outline: none;
     padding: 0.4em 0;
