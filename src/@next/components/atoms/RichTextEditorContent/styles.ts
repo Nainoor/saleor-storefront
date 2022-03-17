@@ -9,34 +9,38 @@ export const Content = styled.div`
     font-size: 4rem;
     // padding: 1em 0;
     margin: 0;
-    line-height: 1.5em;
+    line-height: 1em;
     outline: none;
     margin-bottom: 0;
     padding-bottom: 0.8rem;
+    font-weight: 600;
   }
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     // padding: 1em 0;
     margin: 0;
     line-height: 1.5em;
     outline: none;
     margin-bottom: 0;
     padding-bottom: 0.8rem;
+    font-weight: 600;
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     // padding: 1em 0;
     margin: 0;
     line-height: 1.5em;
     outline: none;
     margin-bottom: 0;
     padding-bottom: 0.8rem;
+    font-weight: 600;
   }
 
   p {
-    line-height: 1.6em;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
     outline: none;
     padding: 0.4em 0;
   }
@@ -75,6 +79,12 @@ export const Content = styled.div`
         left: 0;
       }
     }
+  }
+
+  a {
+    color: rgb(55, 156, 149);
+    cursor: pointer;
+    text-decoration: underline;
   }
 
   ul {
