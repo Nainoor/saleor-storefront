@@ -48,6 +48,10 @@ body {
     font-style: italic;
   }
 
+  img {
+    pointer-events: none;
+  }
+
 
   #root,
   #__next {
