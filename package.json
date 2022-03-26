@@ -75,7 +75,8 @@
     "workbox-precaching": "^6.0.2",
     "workbox-routing": "^6.0.2",
     "workbox-strategies": "^6.0.2",
-    "yup": "^0.28.0"
+    "yup": "^0.28.0",
+    "uuid": "~8.3.2"
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^16.9.0",

@@ -1,7 +1,7 @@
 import React from "react";
 
-// import { ErrorMessage, Radio } from "@components/atoms";
-import { ErrorMessage } from "@components/atoms";
+import { ErrorMessage, Radio } from "@components/atoms";
+// import { ErrorMessage } from "@components/atoms";
 
 // import { PROVIDERS } from "@temp/core/config";
 
@@ -11,6 +11,8 @@ import {
   // DummyPaymentGateway,
   StripePaymentGateway,
 } from "..";
+
+// import { RazorpayPaymentGateway } from "../RazorpayPaymentGateway";
 
 import * as S from "./styles";
 
@@ -41,7 +43,7 @@ const PaymentGatewaysList: React.FC<IProps> = ({
         selectPaymentGateway(id);
         return (
         <div key={index}>
-          {/* <S.Tile checked={checked}>
+          <S.Tile checked={checked}>
             <Radio
               data-test="checkoutPaymentGatewayStripeInput"
               name="payment-method"
@@ -54,8 +56,8 @@ const PaymentGatewaysList: React.FC<IProps> = ({
                 {name}
               </span>
             </Radio>
-          </S.Tile> */}
-          {checked && (
+          </S.Tile> 
+           {checked && (
             <StripePaymentGateway
               config={config}
               formRef={formRef}
@@ -69,6 +71,68 @@ const PaymentGatewaysList: React.FC<IProps> = ({
               onError={onError}
             />
           )}
+
+          {/* <S.Tile checked={checked}>
+            <Radio data-test="checkoutPaymentGatewayRazorpayInput"
+              name="payment-method"
+              value="Razorpay"
+              checked={checked} 
+              customLabel
+            >
+              <span data-test="checkoutPaymentGatewayRazorpayName">
+                {name}
+              </span>
+            </Radio>
+          </S.Tile>
+          {checked && (
+            <RazorpayPaymentGateway
+              token={selectedPaymentGatewayToken}
+              config={config}
+              formRef={formRef}
+              scriptConfig={PROVIDERS.RAZORPAY.script}
+              processPayment={(token) => processPayment(id, token)}
+              submitPayment={submitPayment}
+              submitPaymentSuccess={submitPaymentSuccess}
+              errors={errors}
+              onError={onError}
+            />
+          )} */}
+
+          
+
+           {/* <S.Tile checked={checked}>
+             <Radio
+              data-test="checkoutPaymentGatewayAdyenInput"
+              name="payment-method"
+              value="adyen"
+              checked={checked}
+              onChange={() =>
+                selectPaymentGateway && selectPaymentGateway(id)
+              }
+              customLabel
+            >
+              <span data-test="checkoutPaymentGatewayAdyenName">
+                {name}
+              </span>
+            </Radio>
+          </S.Tile>
+          {checked && (
+            <AdyenPaymentGateway
+              config={config}
+              formRef={formRef}
+              scriptConfig={PROVIDERS.ADYEN.script}
+              styleConfig={PROVIDERS.ADYEN.style}
+              processPayment={() => processPayment(id)}
+              submitPayment={submitPayment}
+              submitPaymentSuccess={submitPaymentSuccess}
+              errors={errors}
+              onError={onError}
+            />
+          )} */}
+
+
+
+
         </div>
         );
 

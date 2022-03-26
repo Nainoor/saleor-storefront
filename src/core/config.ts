@@ -18,6 +18,9 @@ export const PROVIDERS = {
   },
   RAZORPAY: {
     label: "Razorpay",
+    script: {
+      src: "https://checkout.razorpay.com/v1/checkout.js",
+    },
   },
   ADYEN: {
     label: "Adyen",
