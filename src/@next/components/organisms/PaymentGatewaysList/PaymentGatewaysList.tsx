@@ -3,16 +3,16 @@ import React from "react";
 import { ErrorMessage, Radio } from "@components/atoms";
 // import { ErrorMessage } from "@components/atoms";
 
-// import { PROVIDERS } from "@temp/core/config";
+import { PROVIDERS } from "@temp/core/config";
 
-import {
-  // AdyenPaymentGateway,
-  // BraintreePaymentGateway,
-  // DummyPaymentGateway,
-  StripePaymentGateway,
-} from "..";
+// import {
+//   // AdyenPaymentGateway,
+//   // BraintreePaymentGateway,
+//   // DummyPaymentGateway,
+//   StripePaymentGateway,
+// } from "..";
 
-// import { RazorpayPaymentGateway } from "../RazorpayPaymentGateway";
+import { RazorpayPaymentGateway } from "../RazorpayPaymentGateway";
 
 import * as S from "./styles";
 
@@ -22,6 +22,7 @@ import { IProps } from "./types";
  * Payment Gateways list
  */
 const PaymentGatewaysList: React.FC<IProps> = ({
+  costDetails,
   paymentGateways,
   selectedPaymentGateway,
   selectedPaymentGatewayToken,
@@ -43,7 +44,9 @@ const PaymentGatewaysList: React.FC<IProps> = ({
         selectPaymentGateway(id);
         return (
         <div key={index}>
-          <S.Tile checked={checked}>
+          
+          
+          {/* <S.Tile checked={checked}>
             <Radio
               data-test="checkoutPaymentGatewayStripeInput"
               name="payment-method"
@@ -70,9 +73,9 @@ const PaymentGatewaysList: React.FC<IProps> = ({
               errors={errors}
               onError={onError}
             />
-          )}
+          )} */}
 
-          {/* <S.Tile checked={checked}>
+          <S.Tile checked={checked}>
             <Radio data-test="checkoutPaymentGatewayRazorpayInput"
               name="payment-method"
               value="Razorpay"
@@ -86,7 +89,7 @@ const PaymentGatewaysList: React.FC<IProps> = ({
           </S.Tile>
           {checked && (
             <RazorpayPaymentGateway
-              token={selectedPaymentGatewayToken}
+              costDetails={costDetails}
               config={config}
               formRef={formRef}
               scriptConfig={PROVIDERS.RAZORPAY.script}
@@ -96,7 +99,7 @@ const PaymentGatewaysList: React.FC<IProps> = ({
               errors={errors}
               onError={onError}
             />
-          )} */}
+          )}
 
           
 

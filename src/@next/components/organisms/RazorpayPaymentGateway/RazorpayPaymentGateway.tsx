@@ -9,11 +9,12 @@ import {
   IFormError,
   IPaymentGatewayConfig,
   IPaymentSubmitResult,
+  ITaxedMoney
 } from "@types";
 
 // import { razorpayErrorMessages } from "./intl";
 
-// import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 
 export const razorpayNotNegativeConfirmationStatusCodes = [
@@ -40,11 +41,18 @@ interface IResourceConfig {
 //   error?: string;
 // }
 
+interface ICosts {
+  subtotal?: ITaxedMoney | null;
+  promoCode?: ITaxedMoney | null;
+  shipping?: ITaxedMoney | null;
+  total?: ITaxedMoney | null;
+}
+
 export interface IProps {
   /**
-   * Payment gateway Token.
-   */
-  token?: string;
+ * Payment gateway client configuration.
+ */
+  costDetails: ICosts[];
   /**
    * Payment gateway client configuration.
    */
@@ -68,7 +76,7 @@ export interface IProps {
   /**
    * Method to call on gateway payment submission.
    */
-  submitPayment: (data: object) => Promise<IPaymentSubmitResult>;
+  submitPayment: () => Promise<IPaymentSubmitResult>;
   /**
    * Method called after succesful gateway payment submission. This is the case when no confirmation is needed.
    */
@@ -86,7 +94,7 @@ export interface IProps {
 }
 
 const RazorpayPaymentGateway: React.FC<IProps> = ({
-  token,
+  costDetails,
   config,
   formRef,
   scriptConfig,
@@ -98,7 +106,7 @@ const RazorpayPaymentGateway: React.FC<IProps> = ({
 }: IProps) => {
   // const intl = useIntl();
 
-  // const UUID = uuidv4();
+  const UUID = uuidv4();
 
   const razorpayClientKey = config?.find(({ field }) => field === "api_key")?.value;
   // const razorpayConfig = config?.find(({ field }) => field === "config")?.value;
@@ -107,7 +115,10 @@ const RazorpayPaymentGateway: React.FC<IProps> = ({
   // REMOVE NEXT RUN AFTER DEPLOY
   // const [dropin, setDropin] = useState<any>();
   const gatewayRef = useRef<HTMLDivElement>(null);
-
+  console.log("This is the Cost Details");
+  console.log(costDetails);
+  // console.log(typeof costDetails[3].total?.gross.amount);
+  // console.log(typeof costDetails[3].total?.gross.currency);
   // const _window = window as any;
 
   useEffect(() => {
@@ -128,21 +139,29 @@ const RazorpayPaymentGateway: React.FC<IProps> = ({
     //     // paymentMethodsResponse: parsedRazorpayConfig,
     //     // showPayButton: false,
     //     key: razorpayClientKey,
-    //     currency: "INR",
-    //     amount: "50000",
-    //     order_id: token,
+    //     currency: costDetails[3].total?.gross.currency.toString,
+    //     amount: costDetails[3].total?.gross.amount.toString,
+    //     order_id: UUID,
     //     name: 'Bhuvan Patel Originals',
     //     description: 'Thank you for nothing. Please give us some money',
     //     image: 'https://bhuvanpatel.com/favicon-512.png',
-    //     onSubmit: onSubmitRazorpayForm,
-    //     onAdditionalDetails: onSubmitRazorpayForm,
-    //     onError: onRazorpayError,
-    //   };
+    //     // handler: function (response : any) {
+    //     //   alert(response.razorpay_payment_id);
+    //     //   alert(response.razorpay_order_id);
+    //     //   alert(response.razorpay_signature);
+    //     // }
+    // };
+
+    // const _window = window as any;
+    // const paymentObject = new _window.Razorpay(configuration);
+    // console.log("Opening Razorpay Forms");
+		// paymentObject.open();
 
     
     
     // const dropinElement = checkout?.create("dropin");
-    
+    // const dropinElement = paymentObject;
+    // setDropin(dropinElement);
     // console.log(checkout);
     // if (dropinElement && !dropin && gatewayRef.current) {
     //   dropinElement?.mount(gatewayRef.current);
@@ -214,17 +233,60 @@ const RazorpayPaymentGateway: React.FC<IProps> = ({
   //   }
   // };
 
+  // useEffect(() => {
+    
+  //   (formRef?.current as any)?.addEventListener("submitComplete", () => {
+  //     // dropin.submit();
+  //     // console.log("Dropin Submitting!");
+  //     // dropin.open();
+      
+  //   });
+    
+  // }, [formRef]);
+
+  const handleFormCompleteSubmit = async () => {
+    const payment = await submitPayment();
+    console.log("Submitting Payment!");
+    console.log(payment);
+    // alert(payment);
+    handleFormCompleteSubmit();
+  };
+
   useEffect(() => {
     
-    (formRef?.current as any)?.addEventListener("submitComplete", () => {
+    // (formRef?.current as any)?.addEventListener("submitComplete", async () => {
       // dropin.submit();
-    });
+      // console.log("Dropin Submitting!");
+      // dropin.open();
+      
+      // if (payment.errors?.length) {
+      //   onError(payment.errors);
+      //   return;
+      // }
+  
+      // if (!payment?.confirmationNeeded) {
+      //   submitPaymentSuccess(payment?.order);
+      //   return;
+      // }
+    // });
+
+    return () => {
+      (formRef?.current as any)?.addEventListener(
+        "submitComplete",
+        handleFormCompleteSubmit
+      );
+    };
+      
+  
     
   }, [formRef]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    processPayment(token!);
+
+    console.log("Is this before submitting?");
+    processPayment(UUID);
+    
   };
 
   return (

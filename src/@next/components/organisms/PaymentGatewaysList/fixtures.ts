@@ -27,3 +27,30 @@ export const paymentGateways: IPaymentGateway[] = [
     name: "Stripe",
   },
 ];
+
+const money = {
+  gross: {
+    amount: 123,
+    currency: "INR",
+  },
+  net: {
+    amount: 100,
+    currency: "USD",
+  },
+};
+
+
+export const costDetails = [
+  {
+    promoCode: money,
+  },
+  {
+    shipping: money,
+  },
+  {
+    subtotal: money,
+  },
+  {
+    total: money,
+  },
+];

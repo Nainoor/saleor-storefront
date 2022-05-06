@@ -5,9 +5,22 @@ import {
   IFormError,
   IPaymentGateway,
   IPaymentSubmitResult,
+  ITaxedMoney,
 } from "@types";
 
+
+export interface ICosts {
+  subtotal?: ITaxedMoney | null;
+  promoCode?: ITaxedMoney | null;
+  shipping?: ITaxedMoney | null;
+  total?: ITaxedMoney | null;
+}
+
 export interface IProps {
+  /**
+   * Cost Details.
+   */
+  costDetails: ICosts[];
   /**
    * Available payment gateways.
    */

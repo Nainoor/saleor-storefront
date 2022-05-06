@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import React from "react";
 
 import { PaymentGatewaysList } from ".";
-import { paymentGateways } from "./fixtures";
+import { paymentGateways, costDetails } from "./fixtures";
 
 const processPayment = action("processPayment");
 const submitPayment = async () => Promise.resolve({});
@@ -15,6 +15,7 @@ storiesOf("@components/organisms/PaymentGatewaysList", module)
   .addParameters({ component: PaymentGatewaysList })
   .add("default", () => (
     <PaymentGatewaysList
+      costDetails={costDetails}
       paymentGateways={paymentGateways}
       processPayment={processPayment}
       submitPayment={submitPayment}

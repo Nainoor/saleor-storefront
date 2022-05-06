@@ -4,7 +4,7 @@ import { mount } from "enzyme";
 import React from "react";
 
 import { PaymentGatewaysList } from ".";
-import { paymentGateways } from "./fixtures";
+import { paymentGateways, costDetails } from "./fixtures";
 
 describe("<PaymentGatewaysList />", () => {
   it("renders payment gateways", () => {
@@ -15,6 +15,7 @@ describe("<PaymentGatewaysList />", () => {
     const onError = jest.fn();
     const wrapper = mount(
       <PaymentGatewaysList
+        costDetails={costDetails}
         paymentGateways={paymentGateways}
         processPayment={processPayment}
         submitPayment={submitPayment}
@@ -37,6 +38,7 @@ describe("<PaymentGatewaysList />", () => {
     const onError = jest.fn();
     const wrapper = mount(
       <PaymentGatewaysList
+        costDetails={costDetails}
         paymentGateways={paymentGateways}
         processPayment={processPayment}
         submitPayment={submitPayment}

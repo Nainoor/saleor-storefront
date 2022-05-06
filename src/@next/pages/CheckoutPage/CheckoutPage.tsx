@@ -98,6 +98,22 @@ const CheckoutPage: React.FC<NextPage> = () => {
     onSubmitSuccess: handleStepSubmitSuccess,
   };
 
+  const costDetails = [
+    {
+      promoCode: promoTaxedPrice,
+    },
+    {
+      shipping: shippingTaxedPrice,
+    },
+    {
+      subtotal: subtotalPrice,
+    },
+    {
+      total: totalPrice,
+    }  
+    
+  ];
+
   const checkoutSubpage = useMemo(() => {
     const subpageMapping: Partial<Record<CheckoutStep, JSX.Element>> = {
       [CheckoutStep.Address]: <CheckoutAddressSubpage {...pageProps} />,
@@ -125,16 +141,20 @@ const CheckoutPage: React.FC<NextPage> = () => {
     token?: string,
     cardData?: ICardData
   ) => {
+    // alert("This is the process payment");
     const paymentConfirmStepLink = CHECKOUT_STEPS.find(
       step => step.step === CheckoutStep.PaymentConfirm
     )?.link;
+    // alert( `${window.location.origin}${paymentConfirmStepLink}`);
     const { dataError } = await createPayment({
       gateway,
       token,
       creditCard: cardData,
       returnUrl: `${window.location.origin}${paymentConfirmStepLink}`,
     });
+    
     const errors = dataError?.error;
+    // console.log(token);
     setSubmitInProgress(false);
     if (errors) {
       setPaymentGatewayErrors(errors);
@@ -180,6 +200,7 @@ const CheckoutPage: React.FC<NextPage> = () => {
 
   const paymentGateways = availablePaymentGateways && (
     <PaymentGatewaysList
+      costDetails={costDetails}
       paymentGateways={availablePaymentGateways}
       processPayment={handleProcessPayment}
       submitPayment={handleSubmitPayment}
@@ -200,6 +221,7 @@ const CheckoutPage: React.FC<NextPage> = () => {
      */
     if (
       payment?.gateway !== paymentGatewayNames.adyen &&
+      payment?.gateway !== paymentGatewayNames.razorpay &&
       payment?.gateway !== paymentGatewayNames.stripe
     ) {
       const paymentStepLink = steps.find(
