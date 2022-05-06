@@ -8,7 +8,6 @@ import {
   ITaxedMoney,
 } from "@types";
 
-
 export interface ICosts {
   subtotal?: ITaxedMoney | null;
   promoCode?: ITaxedMoney | null;

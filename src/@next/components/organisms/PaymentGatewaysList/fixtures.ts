@@ -39,7 +39,6 @@ const money = {
   },
 };
 
-
 export const costDetails = [
   {
     promoCode: money,
