@@ -6,8 +6,12 @@ import { FeaturedProduct } from "@graphql/gqlTypes/FeaturedProduct";
 import { paths } from "@paths";
 
 import { Carousel, ProductListItem } from "..";
+import { ProductList } from "@components/organisms";
+import { ProductTile } from "@components/molecules";
 
 import "./scss/index.scss";
+import * as S from "./styles";
+
 
 interface ProductsFeaturedProps {
   title: string | undefined;
@@ -22,7 +26,7 @@ export const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({
     <div className="products-featured">
       <div className="container">
         <h3>{title}</h3>
-        <Carousel>
+        {/* <Carousel>
           {products.map(product => (
             <Link
               href={generatePath(paths.product, { slug: product.slug })}
@@ -33,7 +37,31 @@ export const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({
               </a>
             </Link>
           ))}
-        </Carousel>
+        </Carousel> */}
+        
+          {/* <ProductList
+            products={products}
+            canLoadMore
+            loading={false}
+            // onLoadMore={onLoadMore}
+          /> */}
+
+          <S.List data-test="productList">
+            {products.map(product => {
+              const { slug, name } = product;
+              return (
+                slug &&
+                name && (
+                  <Link href={generatePath(paths.product, { slug })} key={slug}>
+                    <a>
+                      <ProductTile product={product} />
+                    </a>
+                  </Link>
+                )
+              );
+            })}
+          </S.List>
+        
       </div>
     </div>
   ) : null;

@@ -7,7 +7,7 @@ import { generatePath } from "react-router";
 import { paths } from "@paths";
 import { FeaturedProducts } from "@utils/ssr";
 
-import { ProductsFeatured } from "../../components";
+import { ProductsFeatured, Carousel } from "../../components";
 import { structuredData } from "../../core/SEO/Homepage/structuredData";
 import noPhotoImg from "../../images/no-photo.svg";
 import {
@@ -74,6 +74,77 @@ const Page: React.FC<{
           )}
         </div>
       </div> */}
+      <section className="bg-white shadow">
+        <div className="container"> 
+         
+
+      <Carousel>
+      
+      {categories.edges.map(({ node: category }) => (
+        <div key={category.id}>
+
+        <div className="row"> 
+          <div className="col-lg-6 col-xl-6 col-xxl-5">
+            <div className="my-5">
+              <h1 className="display-4">Best products &amp; <br/> brands in our store</h1> 
+              <p className="lead">Trendy Products, Factory Prices, Excellent Service</p> 
+              <a href="#" className="btn btn-primary btn-lg"> Discover </a> 
+              <a href="#" className="btn btn-light btn-lg"> Learn more </a> 
+            </div> 
+          </div> 
+          <div className="col-lg-6 col-xl-6 col-xxl-7"> 
+          <Link
+                    href={generatePath(paths.category, {
+                      slug: category.slug,
+                    })}
+                    key={category.id}
+                  >
+                    <a>
+                      <div
+                        className={classNames(
+                          "home-page__categories__list__image",
+                          {
+                            "home-page__categories__list__image--no-photo": !category.backgroundImage,
+                          }
+                        )}
+                        style={{
+                          backgroundImage: `url(${
+                            category.backgroundImage
+                              ? category.backgroundImage.url
+                              : noPhotoImg
+                          })`,
+                        }}
+                      />
+                      <h3>{category.name}</h3>
+                    </a>
+                  </Link>
+          </div> 
+        </div> 
+
+
+                
+                  
+                </div>
+              ))}
+      </Carousel>
+
+      </div> 
+      </section>
+
+      <div className="home-page__hero">
+        <section>
+          <div className="home-page__hero___title">
+            <h1>
+              <FormattedMessage defaultMessage="Bhuvan Patel Originals" />
+            </h1>
+          </div>
+          <div className="home-page__hero___message">
+            <h1>
+              <FormattedMessage defaultMessage="Affordable art for everyone!" />
+            </h1>
+          </div>
+        </section>
+      </div>
       <ProductsFeatured
         products={featuredProducts.products}
         title={intl.formatMessage({ defaultMessage: "Featured" })}
