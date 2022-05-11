@@ -88,8 +88,8 @@ const Page: React.FC<{
             <div className="my-5">
               <h1 className="display-4">Best products &amp; <br/> brands in our store</h1> 
               <p className="lead">Trendy Products, Factory Prices, Excellent Service</p> 
-              <a href="#" className="btn btn-primary btn-lg"> Discover </a> 
-              <a href="#" className="btn btn-light btn-lg"> Learn more </a> 
+              <a href="https://bhuvanpatel.com" className="btn btn-primary btn-lg"> Discover </a> 
+              <a href="https://bhuvanpatel.com" className="btn btn-light btn-lg"> Learn more </a> 
             </div> 
           </div> 
           <div className="col-lg-6 col-xl-6 col-xxl-7"> 
