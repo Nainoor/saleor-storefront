@@ -5,8 +5,8 @@ import { generatePath } from "react-router";
 import { FeaturedProduct } from "@graphql/gqlTypes/FeaturedProduct";
 import { paths } from "@paths";
 
-import { Carousel, ProductListItem } from "..";
-import { ProductList } from "@components/organisms";
+// import { Carousel, ProductListItem } from "..";
+// import { ProductList } from "@components/organisms";
 import { ProductTile } from "@components/molecules";
 
 import "./scss/index.scss";
