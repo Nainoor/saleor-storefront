@@ -8,6 +8,7 @@ import type {
 } from "next/app";
 import NextApp from "next/app";
 import Head from "next/head";
+import Script from "next/experimental-script";
 import * as React from "react";
 import { positions, Provider as AlertProvider } from "react-alert";
 import TagManager from "react-gtm-module";
@@ -17,6 +18,9 @@ import { NotificationTemplate } from "@components/atoms";
 import { ServiceWorkerProvider } from "@components/containers";
 import { defaultTheme, GlobalStyle } from "@styles";
 import 'bootstrap/dist/css/bootstrap.css';
+import $ from 'jquery';
+import Popper from 'popper.js';
+// import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { NextQueryParamProvider } from "@temp/components";
 import { getSaleorApi, getShopConfig, ShopConfig } from "@utils/ssr";
 
@@ -85,7 +89,7 @@ const App = ({
       <link rel="preconnect" href={apiUrl} />
       <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
       <link rel="icon" type="image/png" href="/favicon-36.png" />
-      <link rel="manifest" href="/manifest.json" />
+      <link rel="manifest" href="/manifest.json" />      
     </Head>
     <ThemeProvider theme={defaultTheme}>
       <AlertProvider
@@ -110,6 +114,8 @@ const App = ({
         </ServiceWorkerProvider>
       </AlertProvider>
     </ThemeProvider>
+    <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossOrigin="anonymous" />    
+
   </>
 );
 

@@ -78,6 +78,68 @@ export const MainMenu: React.FC<MainMenuProps> = ({
   }, [activeDropdown]);
 
   return (
+
+    // <header className="section-header border-bottom"> 
+    //   <nav className="navbar navbar-expand-lg navbar-light"> 
+    //     <div className="container">
+    //       <a className="navbar-brand" href="#"> 
+    //         <img src={logoImg} height="40" className="logo"/>
+            
+    //           {/* <Link href={paths.home}>
+    //             <a>
+    //               <ReactSVG path={logoImg} />
+    //             </a>
+    //           </Link> */}
+            
+    //       </a>
+    //       <div className="order-lg-last flex-shrink-0">
+    //         <a href="#" className="btn btn-icon btn-light"> 
+    //           <i className="fa fa-search"></i>
+    //         </a> 
+    //         <a href="#" className="btn btn-icon btn-light">
+    //           <i className="fa fa-user"></i>
+    //         </a>
+    //         <a href="#" className="btn btn-icon btn-primary">
+    //           <i className="fa fa-shopping-cart"></i>
+    //         </a> 
+    //         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_main4" aria-expanded="false" aria-label="Toggle navigation"> 
+    //           <span className="navbar-toggler-icon"></span>
+    //         </button> 
+    //       </div>
+    //       <div className="collapse navbar-collapse" id="navbar_main4">
+    //         <ul className="navbar-nav mx-auto">
+    //           <li className="nav-item"> 
+    //             <a className="nav-link" href="#"> Home </a> 
+    //           </li> 
+    //           <li className="nav-item"> 
+    //             <a className="nav-link" href="#"> About </a>
+    //           </li> 
+    //           <li className="nav-item">
+    //             <a className="nav-link" href="#"> Services </a>
+    //           </li>
+    //           <li className="nav-item dropdown">
+    //             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
+    //             <ul className="dropdown-menu"> 
+    //               <li> 
+    //                 <a className="dropdown-item" href="#"> Submenu item 1 </a> 
+    //               </li> 
+    //               <li> 
+    //                 <a className="dropdown-item" href="#"> Submenu item 2 </a> 
+    //               </li> 
+    //             </ul> 
+    //           </li> 
+    //           <li className="nav-item"> 
+    //             <a className="nav-link" href="#"> Contacts </a> 
+    //           </li>
+    //         </ul> 
+    //       </div> 
+    //     </div>
+    //   </nav>
+    // </header>
+
+
+
+
     <header
       className={classNames({
         "header-with-dropdown": !!activeDropdown,
@@ -85,7 +147,16 @@ export const MainMenu: React.FC<MainMenuProps> = ({
     >
       {demoMode && <DemoBanner />}
       <nav className="main-menu" id="header">
-        <div className="main-menu__left">
+
+      <div className="main-menu__left">
+          <Link href={paths.home}>
+            <a>
+              <ReactSVG path={logoImg} />
+            </a>
+          </Link>
+        </div>
+
+        <div className="main-menu__center">
           <ul>
             <Media
               query={{ maxWidth: mediumScreen }}
@@ -211,14 +282,6 @@ export const MainMenu: React.FC<MainMenuProps> = ({
               />
             </Online>
           </ul>
-        </div>
-
-        <div className="main-menu__center">
-          <Link href={paths.home}>
-            <a>
-              <ReactSVG path={logoImg} />
-            </a>
-          </Link>
         </div>
 
         <div className="main-menu__right">

@@ -13,8 +13,9 @@
   flex-direction: row;
   height: 3.55rem;
   position: relative;
+  padding: 40px 20px;
 
-  &__left {
+  &__center {
     flex-basis: calc(50% - 2rem);
 
     @media (min-width: $small-screen) {
@@ -25,6 +26,7 @@
       display: flex;
       align-items: center;
       height: 100%;
+      justify-content: center;
     }
   }
 
@@ -39,10 +41,11 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      height: 100%;
     }
   }
 
-  &__center {
+  &__left {
     align-self: center;
 
     svg {
