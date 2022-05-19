@@ -18,6 +18,7 @@ module.exports = withPlugins(
     [withProdConfig, {}, ["!" + PHASE_DEVELOPMENT_SERVER]],
   ],
   {
+    swcMinify: true,
     async headers() {
       return [
         {
