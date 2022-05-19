@@ -15,7 +15,7 @@ import cartImg from "../../images/cart.svg";
 import hamburgerImg from "../../images/hamburger.svg";
 import hamburgerHoverImg from "../../images/hamburger-hover.svg";
 import logoImg from "../../images/logo.svg";
-import searchImg from "../../images/search.svg";
+import searchImg from "../../images/icons8-search.svg";
 import userImg from "../../images/user.svg";
 import {
   MenuDropdown,
@@ -393,14 +393,14 @@ export const MainMenu: React.FC<MainMenuProps> = ({
                 overlayContext.show(OverlayType.search, OverlayTheme.right)
               }
             >
-              <Media
+              {/* <Media
                 query={{ minWidth: mediumScreen }}
                 render={() => (
                   <span>
                     <FormattedMessage {...commonMessages.search} />
                   </span>
                 )}
-              />
+              /> */}
               <ReactSVG path={searchImg} />
             </li>
           </ul>

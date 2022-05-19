@@ -1,6 +1,67 @@
 @import "../../../globalStyles/scss/variables.scss";
 
+@font-face {font-family: "Gabriel Sans Cond Bold";
+  src: url("http://db.onlinewebfonts.com/t/65d689114c4b3a3c9ca38ed6645244fa.eot"); /* IE9*/
+  src: url("http://db.onlinewebfonts.com/t/65d689114c4b3a3c9ca38ed6645244fa.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("http://db.onlinewebfonts.com/t/65d689114c4b3a3c9ca38ed6645244fa.woff2") format("woff2"), /* chrome firefox */
+  url("http://db.onlinewebfonts.com/t/65d689114c4b3a3c9ca38ed6645244fa.woff") format("woff"), /* chrome firefox */
+  url("http://db.onlinewebfonts.com/t/65d689114c4b3a3c9ca38ed6645244fa.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+  url("http://db.onlinewebfonts.com/t/65d689114c4b3a3c9ca38ed6645244fa.svg#Gabriel Sans Cond Bold") format("svg"); /* iOS 4.1- */
+}
+
 .home-page {
+
+  // @media (min-width: $medium-screen) {
+  //   box-sizing: border-box;
+  //   margin: 0 auto;
+  //   max-width: 90%;
+  // }
+
+  .w-90{
+    width: 90%;
+  }
+
+  .block-line {
+    margin: 0;
+    font-size: 17px;
+    font-family: 'Bodoni Moda', serif;
+    color: #343434;
+    text-align: center;
+  }
+
+  .section-heading {
+    font-size: 22px;
+    font-family: 'Bodoni Moda', serif;
+    color: black;
+    text-align: center;
+  }
+
+  section#recommended-products  div.slider-control-bottomcenter ul{
+    bottom: 0px!important;
+  }
+
+  .recommended-title-font {
+    font-family: 'Gabriel Sans Cond Bold';
+    font-style: normal;
+    line-height: 1.42857;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #555;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .recommended-price-font {
+    font-family: 'Gabriel Sans Cond Bold';
+    font-style: normal;
+    line-height: 1.42857;
+    font-size: 12px;
+    font-weight: 300;
+    color: #555;
+    text-decoration: none;
+    text-align: center;
+  }
+
   &__hero {
     background-color: $blue-overlay;
     background-blend-mode: multiply;
@@ -111,7 +172,7 @@
 
       &__image {
         width: 100%;
-        height: 30rem;
+        height: 45rem;
         background-size: cover;
         background-position: center;
         margin-bottom: 1rem;
