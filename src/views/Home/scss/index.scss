@@ -1,14 +1,5 @@
 @import "../../../globalStyles/scss/variables.scss";
 
-@font-face {font-family: "Gabriel Sans Cond Bold";
-  src: url("http://db.onlinewebfonts.com/t/65d689114c4b3a3c9ca38ed6645244fa.eot"); /* IE9*/
-  src: url("http://db.onlinewebfonts.com/t/65d689114c4b3a3c9ca38ed6645244fa.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("http://db.onlinewebfonts.com/t/65d689114c4b3a3c9ca38ed6645244fa.woff2") format("woff2"), /* chrome firefox */
-  url("http://db.onlinewebfonts.com/t/65d689114c4b3a3c9ca38ed6645244fa.woff") format("woff"), /* chrome firefox */
-  url("http://db.onlinewebfonts.com/t/65d689114c4b3a3c9ca38ed6645244fa.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
-  url("http://db.onlinewebfonts.com/t/65d689114c4b3a3c9ca38ed6645244fa.svg#Gabriel Sans Cond Bold") format("svg"); /* iOS 4.1- */
-}
-
 .home-page {
 
   // @media (min-width: $medium-screen) {
@@ -41,7 +32,7 @@
   }
 
   .recommended-title-font {
-    font-family: 'Gabriel Sans Cond Bold';
+    font-family: 'Inter';
     font-style: normal;
     line-height: 1.42857;
     font-size: 1rem;
@@ -52,7 +43,7 @@
   }
 
   .recommended-price-font {
-    font-family: 'Gabriel Sans Cond Bold';
+    font-family: 'Inter';
     font-style: normal;
     line-height: 1.42857;
     font-size: 12px;

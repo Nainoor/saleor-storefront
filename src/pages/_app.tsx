@@ -90,7 +90,7 @@ const App = ({
       <link href="//db.onlinewebfonts.com/c/65d689114c4b3a3c9ca38ed6645244fa?family=Gabriel+Sans+Cond+Bold" rel="stylesheet" type="text/css"/>    
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
       <link rel="preconnect" href="https://fonts.gstatic.com"/>
-      <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Inter&display=swap" rel="stylesheet"/>      
     </Head>
     <ThemeProvider theme={defaultTheme}>
       <AlertProvider
