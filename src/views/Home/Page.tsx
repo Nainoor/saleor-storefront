@@ -133,7 +133,7 @@ const Page: React.FC<{
       </section>
       
       <blockquote className="blockquote text-center mb-4">
-        <p className="my-3 block-line">The luxury handcrafted porcelain of the 21st century. Lighting, home accessories, decorative sculptures and figurines.</p>
+        <p className="my-3 block-line">`Unique artwork at affordable prices. It&#39;s different.`</p>
       </blockquote>
       
 
@@ -142,7 +142,7 @@ const Page: React.FC<{
 
         {/* <div className="products-featured">
           <div className="container-fluid"> */}
-            <h3 className="text-center section-heading">RECOMMENDED</h3> 
+            <h3 className="text-center section-heading">Ganesh Art</h3> 
               {/* <div className="row"> */}
                 <Carousel autoplay wrapAround height="100%" pauseOnHover={false} slidesToScroll={1} width="90%" cellAlign="center" className="mx-auto">
                   {featuredProducts.products.map(product => (
@@ -210,7 +210,7 @@ const Page: React.FC<{
       )}
 
 
-<section className="bg-white">
+{/* <section className="bg-white">
         <div className="container-fluid"> 
          
 
@@ -243,18 +243,11 @@ const Page: React.FC<{
                 })`,
               }}
             />
-            {/* <h3>{category.name}</h3> */}
+            <h3>{category.name}</h3> 
           </a>
         </Link>
           </div> 
-          {/* <div className="col-lg-6 col-xl-6 col-xxl-5">
-            <div className="my-5">
-              <h1 className="display-4">Best products &amp; <br/> brands in our store</h1> 
-              <p className="lead">Trendy Products, Factory Prices, Excellent Service</p> 
-              <a href="https://bhuvanpatel.com" className="btn btn-primary btn-lg"> Discover </a> 
-              <a href="https://bhuvanpatel.com" className="btn btn-light btn-lg"> Learn more </a> 
-            </div> 
-          </div>  */}
+        
           
         </div> 
 
@@ -266,7 +259,7 @@ const Page: React.FC<{
       </Carousel>
 
       </div> 
-      </section>
+      </section> */}
 
 
 
@@ -285,7 +278,7 @@ const Page: React.FC<{
           </div>
         </section>
       </div> */}
-      <ProductsFeatured
+      {/* <ProductsFeatured
         products={featuredProducts.products}
         title={intl.formatMessage({ defaultMessage: "Featured" })}
       />
@@ -328,7 +321,7 @@ const Page: React.FC<{
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 };

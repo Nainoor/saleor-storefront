@@ -25,6 +25,6 @@ export const Thumbnail: React.FC<IProps> = ({
       alt={maybe(() => (thumbnail!.alt ? thumbnail!.alt : ""), "")}
     >
       {children}
-    </CachedImage>
+    </CachedImage>    
   );
 };
