@@ -27,7 +27,7 @@ const Page: React.FC<{
   const categoriesExist = () => {
     return categories && categories.edges && categories.edges.length > 0;
   };
-  const intl = useIntl();
+  // const intl = useIntl();
 
   return (
     <>
