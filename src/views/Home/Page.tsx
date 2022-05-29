@@ -1,13 +1,15 @@
 import classNames from "classnames";
 import Link from "next/link";
 import * as React from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { useIntl } from "react-intl";
+// import { FormattedMessage, useIntl } from "react-intl";
 import { generatePath } from "react-router";
 
 import { paths } from "@paths";
 import { FeaturedProducts } from "@utils/ssr";
 
-import { ProductsFeatured, Carousel, ProductListItemBS } from "../../components";
+import { Carousel, ProductListItemBS } from "../../components";
+// import { ProductsFeatured, Carousel, ProductListItemBS } from "../../components";
 import { structuredData } from "../../core/SEO/Homepage/structuredData";
 import noPhotoImg from "../../images/no-photo.svg";
 import {
