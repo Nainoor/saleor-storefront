@@ -47,7 +47,7 @@ const ProductListItemBS: React.FC<ProductListItemProps> = ({ product }) => {
     {/* <div className="card-body"> */}
       {/* <h4 className="card-text text-truncate recommended-title-font">{product.name}</h4> */}
       {/* <p className="card-text">{category?.name}</p> */}
-      {/* <p className="card-text recommended-price-font">{getProductPrice()}</p> */}
+      <p className="card-text recommended-price-font">{getProductPrice()}</p>
     {/* </div> */}
     </div>
   );
