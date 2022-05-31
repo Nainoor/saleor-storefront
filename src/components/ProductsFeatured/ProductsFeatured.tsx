@@ -4,12 +4,12 @@ import { generatePath } from "react-router";
 
 import { FeaturedProduct } from "@graphql/gqlTypes/FeaturedProduct";
 import { paths } from "@paths";
-// import { Carousel, ProductListItem } from "..";
+import { Carousel, ProductListItem } from "..";
 // import { ProductList } from "@components/organisms";
-import { ProductTile } from "@components/molecules";
+// import { ProductTile } from "@components/molecules";
 
 import "./scss/index.scss";
-import * as S from "./styles";
+// import * as S from "./styles";
 
 
 interface ProductsFeaturedProps {
@@ -25,7 +25,7 @@ export const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({
     <div className="products-featured">
       <div className="container">
         <h3>{title}</h3>
-        {/* <Carousel>
+        <Carousel>
           {products.map(product => (
             <Link
               href={generatePath(paths.product, { slug: product.slug })}
@@ -36,7 +36,7 @@ export const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({
               </a>
             </Link>
           ))}
-        </Carousel> */}
+        </Carousel>
         
           {/* <ProductList
             products={products}
@@ -45,7 +45,7 @@ export const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({
             // onLoadMore={onLoadMore}
           /> */}
 
-          <S.List data-test="productList">
+          {/* <S.List data-test="productList">
             {products.map(product => {
               const { slug, name } = product;
               return (
@@ -60,7 +60,9 @@ export const ProductsFeatured: React.FC<ProductsFeaturedProps> = ({
               );
             })}
           </S.List>
-        
+         */}
+
+
       </div>
     </div>
   ) : null;

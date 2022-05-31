@@ -8,7 +8,8 @@ import { generatePath } from "react-router";
 import { paths } from "@paths";
 import { FeaturedProducts } from "@utils/ssr";
 
-import { Carousel, ProductListItemBS } from "../../components";
+// import { Carousel, ProductListItemBS } from "../../components";
+import { Carousel } from "../../components";
 // import { ProductsFeatured, Carousel, ProductListItemBS } from "../../components";
 import { structuredData } from "../../core/SEO/Homepage/structuredData";
 import noPhotoImg from "../../images/no-photo.svg";
@@ -24,9 +25,9 @@ const Page: React.FC<{
   featuredProducts: FeaturedProducts;
   shop: HomePageProducts_shop;
 }> = ({ categories, featuredProducts, shop }) => {
-  const categoriesExist = () => {
-    return categories && categories.edges && categories.edges.length > 0;
-  };
+  // const categoriesExist = () => {
+  //   return categories && categories.edges && categories.edges.length > 0;
+  // };
   // const intl = useIntl();
 
   return (
@@ -76,62 +77,44 @@ const Page: React.FC<{
           )}
         </div>
       </div> */}
-      <section className="bg-white">
+      <section className="">
         <div className="container-fluid"> 
-         
-
-      <Carousel autoplay wrapAround pauseOnHover={false} slidesToShow={1} slidesToScroll={1}>
+          <Carousel autoplay wrapAround pauseOnHover slidesToShow={1} slidesToScroll={1}>
       
-      {categories.edges.map(({ node: category }) => (
-        <div key={category.id} className="px-xl-5">
-
-        <div className="row"> 
-
-        <div className="col-lg"> 
-          <Link href={generatePath(paths.category, {
-            slug: category.slug,
-          })}
-          key={category.id}
-        >
-          <a>
-            <div
-              className={classNames(
-                "home-page__categories__list__image",
-                {
-                  "home-page__categories__list__image--no-photo": !category.backgroundImage,
-                }
-              )}
-              style={{
-                backgroundImage: `url(${
-                  category.backgroundImage
-                    ? category.backgroundImage.url
-                    : noPhotoImg
-                })`,
-              }}
-            />
-            {/* <h3>{category.name}</h3> */}
-          </a>
-        </Link>
-          </div> 
-          {/* <div className="col-lg-6 col-xl-6 col-xxl-5">
-            <div className="my-5">
-              <h1 className="display-4">Best products &amp; <br/> brands in our store</h1> 
-              <p className="lead">Trendy Products, Factory Prices, Excellent Service</p> 
-              <a href="https://bhuvanpatel.com" className="btn btn-primary btn-lg"> Discover </a> 
-              <a href="https://bhuvanpatel.com" className="btn btn-light btn-lg"> Learn more </a> 
-            </div> 
-          </div>  */}
-          
+            {categories.edges.map(({ node: category }) => (
+              <div key={category.id} className="px-xl-5">
+                <div className="row"> 
+                  <div className="col-lg"> 
+                    <Link href={generatePath(paths.category, {
+                      slug: category.slug,
+                      })}
+                      key={category.id}
+                    >
+                    <a>
+                      <div
+                        className={classNames(
+                          "home-page__categories__list__image",
+                          {
+                            "home-page__categories__list__image--no-photo": !category.backgroundImage,
+                          }
+                        )}
+                        style={{
+                          backgroundImage: `url(${
+                            category.backgroundImage
+                              ? category.backgroundImage.url
+                              : noPhotoImg
+                          })`,
+                        }}
+                      />
+                      {/* <h3>{category.name}</h3> */}
+                    </a>
+                    </Link>
+                  </div> 
+                </div> 
+              </div>
+            ))}
+          </Carousel>
         </div> 
-
-
-                
-                  
-                </div>
-              ))}
-      </Carousel>
-
-      </div> 
       </section>
       
       <blockquote className="blockquote text-center mb-4">
@@ -139,77 +122,45 @@ const Page: React.FC<{
       </blockquote>
       
 
-      <section id="recommended-products" className="bg-white">
+      <section id="recommended-products" className="">
         <div className="container-fluid"> 
-
-        {/* <div className="products-featured">
-          <div className="container-fluid"> */}
-            <h3 className="text-center section-heading">Ganesh Art</h3> 
-              {/* <div className="row"> */}
-                <Carousel autoplay wrapAround height="100%" pauseOnHover={false} slidesToScroll={1} width="90%" cellAlign="center" className="mx-auto">
-                  {featuredProducts.products.map(product => (
-                    // <div className="col-sm">
-                      <Link
-                        href={generatePath(paths.product, { slug: product.slug })}
-                        key={product.id}
-                      >
-                        <a>
-                          <ProductListItemBS product={product} />
-                        </a>
-                      </Link>
-                    // </div>
-                  ))}
-                </Carousel>
-              {/* </div>    */}
-          {/* </div>
-        </div> */}
-
-      </div> 
-      </section>
-
-      {categoriesExist() && (
-      <section className="bg-white">
-        <div className="container-fluid"> 
-          
-          <h3 className="text-center section-heading my-3">DISCOVER BHUVANPATELORIGINALS</h3> 
-
-            <div className="row gx-1 w-90 mx-auto">
-              
-              {categories.edges.map(({ node: category }) => (
-                  <div className="col-lg-2 col-md-6">
-                    <div key={category.id}>
-                      <Link
-                        href={generatePath(paths.category, {
-                          slug: category.slug,
-                        })}
-                        key={category.id}
-                      >
-                        <a>
-                        <div className="card border-0">
-                        <img className="card-img-top" src={
-                                  category.backgroundImage
-                                    ? category.backgroundImage.url
-                                    : noPhotoImg
-                                } alt={category.name}/>
-                  
-                        <div className="card-body">
-                          <h4 className="card-text text-truncate recommended-title-font">{category.name}</h4>
-                          {/* <p className="card-text">{category?.name}</p> */}
-                          {/* <p className="card-text recommended-price-font">{ca}</p> */}
-                        </div>
-                        </div>
-                        </a>
-                      </Link>
+          <h3 className="text-center section-heading">Ganesh Art</h3>           
+          <Carousel autoplay wrapAround height="100%" pauseOnHover={false} slidesToScroll={1} width="90%" cellAlign="center" className="mx-auto">               
+            {[...Array(10)].map((elementInArray, index) => (    
+                <Link
+                  href={generatePath(paths.category, { slug: "prints" })}                        
+                >
+                  <a>
+                    <div className="card mx-0 border-0">
+                    <img src={`/static/product_images/ganesh/${index+1}.jpg`} alt=""/>
                     </div>
-                  </div>
-                ))}
-
-            </div>
-          
+                  </a>
+                </Link>                    
+              ))}
+          </Carousel>        
         </div> 
       </section>
 
-      )}
+      <section id="recommended-products" className="mt-3">
+        <div className="container-fluid"> 
+          <h3 className="text-center section-heading">Bharatnatyam Art</h3>           
+          <Carousel autoplay wrapAround height="100%" pauseOnHover={false} slidesToScroll={1} width="90%" cellAlign="center" className="mx-auto">               
+            {[...Array(10)].map((elementInArray, index) => (    
+                <Link
+                  href={generatePath(paths.category, { slug: "prints" })}                        
+                >
+                  <a>
+                    <div className="card mx-0 border-0">
+                    <img src={`/static/product_images/ganesh/${index+1}.jpg`} alt=""/>
+                    </div>
+                  </a>
+                </Link>                    
+              ))}
+          </Carousel>        
+        </div> 
+      </section>
+
+      
 
 
 {/* <section className="bg-white">

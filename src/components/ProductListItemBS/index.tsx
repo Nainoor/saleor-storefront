@@ -44,11 +44,11 @@ const ProductListItemBS: React.FC<ProductListItemProps> = ({ product }) => {
     <div className="card mx-3 border-0">
       {/* <img className="card-img-top" src="..." alt="Card image cap"> */}
       <Thumbnail source={product} />
-    <div className="card-body">
-      <h4 className="card-text text-truncate recommended-title-font">{product.name}</h4>
+    {/* <div className="card-body"> */}
+      {/* <h4 className="card-text text-truncate recommended-title-font">{product.name}</h4> */}
       {/* <p className="card-text">{category?.name}</p> */}
-      <p className="card-text recommended-price-font">{getProductPrice()}</p>
-    </div>
+      {/* <p className="card-text recommended-price-font">{getProductPrice()}</p> */}
+    {/* </div> */}
     </div>
   );
 };
