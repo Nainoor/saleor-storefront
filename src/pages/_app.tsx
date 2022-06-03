@@ -37,7 +37,6 @@ import {
   serviceWorkerTimeout,
   ssrMode,
 } from "../constants";
-import ReactPixel from 'react-facebook-pixel';
 
 declare global {
   interface Window {
@@ -93,7 +92,7 @@ const App = ({
       <link rel="preconnect" href="https://fonts.gstatic.com"/>
       <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Inter&display=swap" rel="stylesheet"/>           
       {/* <!-- Meta Pixel Code --> */}
-      <Script>{`
+      <Script id="facebook-pixel">{`
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -106,13 +105,7 @@ const App = ({
         fbq('track', 'PageView');
         `}</Script>
 
-      {/* <!-- End Meta Pixel Code -->  */}
-      {
-        ReactPixel.init('324771406342674')
-      } 
-      {
-        ReactPixel.pageView()
-      }
+      {/* <!-- End Meta Pixel Code -->  */}      
     </Head>
     <ThemeProvider theme={defaultTheme}>
       <AlertProvider
