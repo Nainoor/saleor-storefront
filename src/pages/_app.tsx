@@ -37,7 +37,6 @@ import {
   serviceWorkerTimeout,
   ssrMode,
 } from "../constants";
-import ReactPixel from 'react-facebook-pixel';
 
 declare global {
   interface Window {
@@ -67,11 +66,6 @@ if (sentryDsn) {
   });
 }
 
-const TrackFbPageView = async () => {
-  const { default: ReactPixel } = await import('react-facebook-pixel');
-  ReactPixel.init('324771406342674');
-  ReactPixel.pageView();
-};
 
 const saleorConfig: ConfigInput = { apiUrl, channel: channelSlug };
 
