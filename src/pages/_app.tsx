@@ -82,6 +82,7 @@ const App = ({
 }: AppProps) => (
   <>
     <Head>
+      <meta name="facebook-domain-verification" content="vbnzntdfwopi565ykxupaspkxk3usr" />
       <title>Bhuvan Patel Originals - Shop and Portfolio</title>
       <link rel="preconnect" href={apiUrl} />
       <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
@@ -91,24 +92,19 @@ const App = ({
       <link rel="preconnect" href="https://fonts.gstatic.com"/>
       <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Inter&display=swap" rel="stylesheet"/>     
       {/* <!-- Meta Pixel Code --> */}
-     
-      <Script
-        id="fb-pixel"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '324771406342674');
-          `,
-        }}
-      />
+      <Script>{`
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '324771406342674');
+        fbq('track', 'PageView');
+        `}</Script>
+
       {/* <!-- End Meta Pixel Code -->  */}
     </Head>
     <ThemeProvider theme={defaultTheme}>
