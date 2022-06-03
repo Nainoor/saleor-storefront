@@ -37,6 +37,7 @@ import {
   serviceWorkerTimeout,
   ssrMode,
 } from "../constants";
+import ReactPixel from 'react-facebook-pixel';
 
 declare global {
   interface Window {
@@ -90,7 +91,7 @@ const App = ({
       <link rel="manifest" href="/manifest.json" />  
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
       <link rel="preconnect" href="https://fonts.gstatic.com"/>
-      <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Inter&display=swap" rel="stylesheet"/>     
+      <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Inter&display=swap" rel="stylesheet"/>           
       {/* <!-- Meta Pixel Code --> */}
       <Script>{`
         !function(f,b,e,v,n,t,s)
@@ -106,6 +107,12 @@ const App = ({
         `}</Script>
 
       {/* <!-- End Meta Pixel Code -->  */}
+      {
+        ReactPixel.init('324771406342674')
+      } 
+      {
+        ReactPixel.pageView()
+      }
     </Head>
     <ThemeProvider theme={defaultTheme}>
       <AlertProvider
