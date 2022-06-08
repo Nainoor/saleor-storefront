@@ -151,7 +151,7 @@ const Page: React.FC<{
                 >
                   <a>
                     <div className="card mx-0 border-0">
-                    <img src={`/static/product_images/ganesh/${index+1}.jpg`} alt=""/>
+                    <img src={`/static/product_images/bharatnatyam/${index+1}.jpg`} alt=""/>
                     </div>
                   </a>
                 </Link>                    

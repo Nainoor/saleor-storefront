@@ -46,22 +46,22 @@ export const CachedImage: React.FC<IImage> = ({
   }
 
   return (
-    // <img
-    //   {...props}
-    //   src={url}
-    //   srcSet={url2x ? `${url} 1x, ${url2x} 2x` : `${url} 1x`}
-    //   alt={alt}
-    //   // navigator.onLine is not always accurate
-    //   onError={() => setUnavailable(true)}
-    // />
-
     <img
       {...props}
-      src={url2x}
-      srcSet={url2x ? `${url2x} 1x, ${url2x} 2x` : `${url2x} 1x`}
+      src={url}
+      srcSet={url2x ? `${url} 1x, ${url2x} 2x` : `${url} 1x`}
       alt={alt}
       // navigator.onLine is not always accurate
       onError={() => setUnavailable(true)}
     />
+
+    // <img
+    //   {...props}
+    //   src={url2x}
+    //   srcSet={url2x ? `${url2x} 1x, ${url2x} 2x` : `${url2x} 1x`}
+    //   alt={alt}
+    //   // navigator.onLine is not always accurate
+    //   onError={() => setUnavailable(true)}
+    // />
   );
 };
