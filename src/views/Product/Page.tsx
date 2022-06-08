@@ -43,7 +43,9 @@ const Page: React.FC<
 
   const productGallery: React.RefObject<HTMLDivElement> = React.useRef();
 
-  const [variantId, setVariantId] = React.useState("");
+  const [variantId, setVariantId] = React.useState("");  
+  const [count, setCount] = React.useState(0);
+
 
   const getImages = () => {
     if (product.variants && variantId) {
@@ -51,11 +53,18 @@ const Page: React.FC<
         variant => variant.id === variantId
       );
 
-      if (variant?.images.length > 0) {
-        return variant.images;
+      if (variant?.images.length > 0) {  
+        const allVariantImages = variant.images;              
+        // allVariantImages.shift();
+        return allVariantImages;
       }
     }
 
+    if(count<1) {
+      product.images.shift();
+    }
+    setCount(1);
+    
     return product.images;
   };
 
