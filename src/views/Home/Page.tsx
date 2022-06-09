@@ -141,7 +141,7 @@ const Page: React.FC<{
         </div> 
       </section>
 
-      <section id="recommended-products" className="mt-3">
+      <section id="recommended-products" className="mt-4">
         <div className="container-fluid"> 
           <h3 className="text-center section-heading">Bharatnatyam Art</h3>           
           <Carousel autoplay wrapAround height="100%" pauseOnHover={false} slidesToScroll={1} width="90%" cellAlign="center" className="mx-auto">               

@@ -18,6 +18,7 @@ interface CarouselType extends CarouselProps {
 const renderDotControls = ({
   currentSlide,
   slideCount,
+  goToSlide,
 }) => {
   return (
     <div
@@ -40,6 +41,7 @@ const renderDotControls = ({
       >
         {[...Array(slideCount)].map((sc, i) => (
           <li
+            className={currentSlide === i ? "active" : undefined}
             style={{ listStyleType: 'none', display: 'inline-block' }}
             key={i + 1}
           >
@@ -52,6 +54,7 @@ const renderDotControls = ({
                 borderRadius: '5px',
                 margin: '0 3px'
               }}
+              onClick={() => goToSlide(i)}
             />
           </li>
         ))}
@@ -69,7 +72,7 @@ const Carousel: React.FC<CarouselType> = ({ children, ...rest }) => {
     // renderBottomCenterControls: () => null,
     renderCenterLeftControls: () => null,
     renderCenterRightControls: () => null,
-    renderBottomCenterControls: ({ currentSlide, slideCount }) => renderDotControls({ currentSlide, slideCount }),
+    renderBottomCenterControls: ({ currentSlide, slideCount, goToSlide }) => renderDotControls({ currentSlide, slideCount, goToSlide }),
     // renderCenterLeftControls: ({ previousSlide, currentSlide }) =>
     //   currentSlide !== 0 ? (
     //     <div

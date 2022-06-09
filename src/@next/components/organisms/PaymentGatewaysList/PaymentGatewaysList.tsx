@@ -3,16 +3,16 @@ import React from "react";
 import { ErrorMessage, Radio } from "@components/atoms";
 // import { ErrorMessage } from "@components/atoms";
 
-import { PROVIDERS } from "@temp/core/config";
+// import { PROVIDERS } from "@temp/core/config";
 
-// import {
-//   // AdyenPaymentGateway,
-//   // BraintreePaymentGateway,
-//   // DummyPaymentGateway,
-//   // StripePaymentGateway,
-// } from "..";
+import {
+  // AdyenPaymentGateway,
+  // BraintreePaymentGateway,
+  // DummyPaymentGateway,
+  StripePaymentGateway,
+} from "..";
 
-import { RazorpayPaymentGateway } from "../RazorpayPaymentGateway";
+// import { RazorpayPaymentGateway } from "../RazorpayPaymentGateway";
 
 import * as S from "./styles";
 
@@ -38,7 +38,7 @@ const PaymentGatewaysList: React.FC<IProps> = ({
   return (
     <S.Wrapper>
       {paymentGateways.map(({ id, name, config }, index) => {
-        const checked = selectedPaymentGateway === id;
+        // const checked = selectedPaymentGateway === id;
         
         // DEFAULT PAYMENT GATEWAY
         selectPaymentGateway(id);
@@ -60,7 +60,7 @@ const PaymentGatewaysList: React.FC<IProps> = ({
               </span>
             </Radio>
           </S.Tile> 
-           {checked && (
+           {checked && ( */}
             <StripePaymentGateway
               config={config}
               formRef={formRef}
@@ -73,9 +73,9 @@ const PaymentGatewaysList: React.FC<IProps> = ({
               errors={errors}
               onError={onError}
             />
-          )} */}
+          {/* )} */}
 
-          <S.Tile checked={checked}>
+          {/* <S.Tile checked={checked}>
             <Radio data-test="checkoutPaymentGatewayRazorpayInput"
               name="payment-method"
               value="Razorpay"
@@ -99,7 +99,7 @@ const PaymentGatewaysList: React.FC<IProps> = ({
               errors={errors}
               onError={onError}
             />
-          )}
+          )} */}
 
           
 

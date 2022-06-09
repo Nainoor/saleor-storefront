@@ -3,11 +3,11 @@ import { media, styled } from "@styles";
 export const List = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 2rem;
+  grid-gap: 0rem;
 
   ${media.largeScreen`
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1.5rem;
+    grid-gap: 1rem;
   `}
 
   ${media.smallScreen`

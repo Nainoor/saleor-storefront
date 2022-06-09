@@ -4,7 +4,8 @@ import { FormattedMessage } from "react-intl";
 import { generatePath } from "react-router";
 
 import { Button, Loader } from "@components/atoms";
-import { ProductTile } from "@components/molecules";
+// import { ProductTile } from "@components/molecules";
+import { ProductTileBS } from "@components/molecules";
 import { paths } from "@paths";
 
 import * as S from "./styles";
@@ -26,7 +27,7 @@ export const ProductList: React.FC<IProps> = ({
           name && (
             <Link href={generatePath(paths.product, { slug })} key={slug}>
               <a>
-                <ProductTile product={product} />
+                <ProductTileBS product={product} />
               </a>
             </Link>
           )
