@@ -125,7 +125,7 @@ const Page: React.FC<{
       <section id="recommended-products" className="">
         <div className="container-fluid"> 
           <h3 className="text-center section-heading">Ganesh Art</h3>           
-          <Carousel autoplay wrapAround height="100%" pauseOnHover={false} slidesToScroll={1} width="90%" cellAlign="center" className="mx-auto">               
+          <Carousel wrapAround height="100%" pauseOnHover={false} slidesToScroll={1} width="90%" cellAlign="center" className="mx-auto">               
             {[...Array(10)].map((elementInArray, index) => (    
                 <Link
                   href={generatePath(paths.category, { slug: "prints" })}                        
@@ -144,7 +144,7 @@ const Page: React.FC<{
       <section id="recommended-products" className="mt-4">
         <div className="container-fluid"> 
           <h3 className="text-center section-heading">Bharatnatyam Art</h3>           
-          <Carousel autoplay wrapAround height="100%" pauseOnHover={false} slidesToScroll={1} width="90%" cellAlign="center" className="mx-auto">               
+          <Carousel wrapAround height="100%" pauseOnHover={false} slidesToScroll={1} width="90%" cellAlign="center" className="mx-auto">               
             {[...Array(10)].map((elementInArray, index) => (    
                 <Link
                   href={generatePath(paths.category, { slug: "prints" })}                        
