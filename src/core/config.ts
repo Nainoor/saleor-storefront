@@ -69,12 +69,12 @@ export const STATIC_PAGES = [
 export const SOCIAL_MEDIA = [
   {
     ariaLabel: "facebook",
-    href: "https://www.facebook.com/bhuvan.patel.370/",
+    href: "https://www.facebook.com/bhuvanpateloriginals",
     path: require("../images/facebook-icon.svg"),
   },
   {
     ariaLabel: "instagram",
-    href: "https://www.instagram.com/_bhuvanpatel_/",
+    href: "https://www.instagram.com/bhuvanpateloriginals/",
     path: require("../images/instagram-icon.svg"),
   },
   {
@@ -82,11 +82,11 @@ export const SOCIAL_MEDIA = [
     href: "https://twitter.com/bhuvanp40197003",
     path: require("../images/twitter-icon.svg"),
   },
-  {
-    ariaLabel: "youtube",
-    href: "https://www.youtube.com/channel/UCg_ptb-U75e7BprLCGS4s1g/videos",
-    path: require("../images/youtube-icon.svg"),
-  },
+  // {
+  //   ariaLabel: "youtube",
+  //   href: "https://www.youtube.com/channel/UCg_ptb-U75e7BprLCGS4s1g/videos",
+  //   path: require("../images/youtube-icon.svg"),
+  // },
 ];
 export const META_DEFAULTS = {
   custom: [],

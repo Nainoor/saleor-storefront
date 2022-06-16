@@ -38,7 +38,7 @@ export const Page: React.FC<PageProps> = ({
     <div className="container">
       <Breadcrumbs breadcrumbs={breadcrumbs} />
       <div className="article-page__container">
-        <div className="article-page__navigation">
+        {/* <div className="article-page__navigation">
           <ul>
             {navigation.map(menuElement => (
               <li
@@ -53,7 +53,7 @@ export const Page: React.FC<PageProps> = ({
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
         <div className="article-page__content">
           <RichTextEditorContent jsonData={page.content} />
         </div>
