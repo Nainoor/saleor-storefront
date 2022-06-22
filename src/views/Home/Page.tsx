@@ -18,7 +18,7 @@ import {
   HomePageProducts_shop,
 } from "./gqlTypes/HomePageProducts";
 
-import { useProductsQuery } from "./../Category/queries";
+import { useProductsQuery } from "../Category/queries";
 import { IFilters } from "@types";
 
 import "./scss/index.scss";
