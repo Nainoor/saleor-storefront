@@ -20,8 +20,6 @@ import {
 
 import { useProductsQuery } from "./../Category/queries";
 import { IFilters } from "@types";
-import { StringParam, useQueryParam } from "use-query-params";
-
 
 import "./scss/index.scss";
 
