@@ -146,7 +146,7 @@ const Page: React.FC<{
         <div className="container-fluid"> 
           <h3 className="text-center section-heading">Ganesh Art</h3>           
           <Carousel wrapAround height="100%" pauseOnHover={false} slidesToScroll={1} width="90%" cellAlign="center" className="mx-auto">               
-            {ganeshData.data.products.edges.map((elementInArray, index) => (    
+            {ganeshData.data?.products?.edges.map((elementInArray, index) => (    
                 <Link
                   href={generatePath(paths.product, { slug: elementInArray.node.slug })}                        
                 >
@@ -166,7 +166,7 @@ const Page: React.FC<{
         <div className="container-fluid"> 
           <h3 className="text-center section-heading">Bharatnatyam Art</h3>           
           <Carousel wrapAround height="100%" pauseOnHover={false} slidesToScroll={1} width="90%" cellAlign="center" className="mx-auto">               
-            {bharatnatyamData.data.products.edges.map((elementInArray, index) => (    
+            {bharatnatyamData.data?.products?.edges.map((elementInArray, index) => (    
                 <Link
                   href={generatePath(paths.product, { slug: elementInArray.node.slug })}                        
                 >
