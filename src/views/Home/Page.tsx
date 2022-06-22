@@ -18,6 +18,11 @@ import {
   HomePageProducts_shop,
 } from "./gqlTypes/HomePageProducts";
 
+import { useProductsQuery } from "./../Category/queries";
+import { IFilters } from "@types";
+import { StringParam, useQueryParam } from "use-query-params";
+
+
 import "./scss/index.scss";
 
 const Page: React.FC<{
@@ -29,6 +34,28 @@ const Page: React.FC<{
   //   return categories && categories.edges && categories.edges.length > 0;
   // };
   // const intl = useIntl();
+
+  console.log("all categories");
+  console.log(categories.edges[0]);
+
+
+
+  const filters: IFilters = {
+    attributes: null,
+    pageSize: null,
+    priceGte: null,
+    priceLte: null,
+    sortBy:  null,
+  };
+  const ganeshData= useProductsQuery(filters, {
+    categoryId: "Q2F0ZWdvcnk6MjU=",
+  });
+  const bharatnatyamData= useProductsQuery(filters, {
+    categoryId: "Q2F0ZWdvcnk6Mjg=",
+  });
+
+  console.log(ganeshData.data);
+  
 
   return (
     <>
@@ -126,6 +153,46 @@ const Page: React.FC<{
         <div className="container-fluid"> 
           <h3 className="text-center section-heading">Ganesh Art</h3>           
           <Carousel wrapAround height="100%" pauseOnHover={false} slidesToScroll={1} width="90%" cellAlign="center" className="mx-auto">               
+            {ganeshData.data.products.edges.map((elementInArray, index) => (    
+                <Link
+                  href={generatePath(paths.product, { slug: elementInArray.node.slug })}                        
+                >
+                  <a>
+                    <div className="card mx-1 border-0">
+                    <img src={elementInArray.node.thumbnail.url} alt=""/>
+                    </div>
+                  </a>
+                </Link>                    
+              ))}
+          </Carousel>        
+        </div> 
+      </section>
+
+      <section id="recommended-products" className="mt-4">
+        <div className="container-fluid"> 
+          <h3 className="text-center section-heading">Bharatnatyam Art</h3>           
+          <Carousel wrapAround height="100%" pauseOnHover={false} slidesToScroll={1} width="90%" cellAlign="center" className="mx-auto">               
+            {bharatnatyamData.data.products.edges.map((elementInArray, index) => (    
+                <Link
+                  href={generatePath(paths.product, { slug: elementInArray.node.slug })}                        
+                >
+                  <a>
+                    <div className="card mx-1 border-0">
+                    <img src={elementInArray.node.thumbnail.url} alt=""/>
+                    </div>
+                  </a>
+                </Link>                    
+              ))}
+          </Carousel>        
+        </div> 
+      </section>
+
+
+
+      {/* <section id="recommended-products" className="">
+        <div className="container-fluid"> 
+          <h3 className="text-center section-heading">Ganesh Art</h3>           
+          <Carousel wrapAround height="100%" pauseOnHover={false} slidesToScroll={1} width="90%" cellAlign="center" className="mx-auto">               
             {[...Array(10)].map((elementInArray, index) => (    
                 <Link
                   href={generatePath(paths.category, { slug: "prints" })}                        
@@ -158,7 +225,7 @@ const Page: React.FC<{
               ))}
           </Carousel>        
         </div> 
-      </section>
+      </section> */}
 
       
 

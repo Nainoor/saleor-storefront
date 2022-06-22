@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   // background: ${props => props.theme.colors.light};
   // padding: 2.5rem;
   text-align: center;
-  height: 35rem;
+  height: auto;
   display: flex;
   flex-direction: column;
   transition: 0.3s;
