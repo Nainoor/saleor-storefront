@@ -28,15 +28,10 @@ const Page: React.FC<{
   featuredProducts: FeaturedProducts;
   shop: HomePageProducts_shop;
 }> = ({ categories, featuredProducts, shop }) => {
-  // const categoriesExist = () => {
-  //   return categories && categories.edges && categories.edges.length > 0;
-  // };
+  const categoriesExist = () => {
+    return categories && categories.edges && categories.edges.length > 0;
+  };
   // const intl = useIntl();
-
-  console.log("all categories");
-  console.log(categories.edges[0]);
-
-
 
   const filters: IFilters = {
     attributes: null,
@@ -52,7 +47,6 @@ const Page: React.FC<{
     categoryId: "Q2F0ZWdvcnk6Mjg=",
   });
 
-  console.log(ganeshData.data);
   
 
   return (
@@ -146,6 +140,7 @@ const Page: React.FC<{
         <p className="my-3 block-line">`Unique artwork at affordable prices. It&#39;s different.`</p>
       </blockquote>
       
+      {categoriesExist() && (
 
       <section id="recommended-products" className="">
         <div className="container-fluid"> 
@@ -165,7 +160,8 @@ const Page: React.FC<{
           </Carousel>        
         </div> 
       </section>
-
+      )}
+      {categoriesExist() && (
       <section id="recommended-products" className="mt-4">
         <div className="container-fluid"> 
           <h3 className="text-center section-heading">Bharatnatyam Art</h3>           
@@ -184,6 +180,9 @@ const Page: React.FC<{
           </Carousel>        
         </div> 
       </section>
+      )}
+
+      
 
 
 
