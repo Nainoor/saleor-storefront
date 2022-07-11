@@ -92,6 +92,7 @@ const App = ({
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
       <link rel="preconnect" href="https://fonts.gstatic.com"/>
       <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Inter&display=swap" rel="stylesheet"/>      
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GVE9E448Y"/>
     </Head>
     <ThemeProvider theme={defaultTheme}>
       <AlertProvider
