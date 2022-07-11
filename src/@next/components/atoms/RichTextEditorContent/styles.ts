@@ -1,6 +1,8 @@
 import { styled } from "@styles";
 
 export const Content = styled.div`
+
+
   .ce-block__content {
     max-width: 100%;
   }
@@ -14,6 +16,7 @@ export const Content = styled.div`
     margin-bottom: 0;
     padding-bottom: 0.8rem;
     font-weight: 600;
+    word-break: break-all;
   }
 
   h2 {
