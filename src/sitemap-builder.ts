@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-// more comments
 import { existsSync } from "fs";
 import path from "path";
 
